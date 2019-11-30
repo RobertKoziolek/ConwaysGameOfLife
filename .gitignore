@@ -20,7 +20,6 @@ gen
 gradle-app.setting
 !gradle-wrapper.jar
 .gradletasknamecache
-.gitignore
 .gradle/
 .idea/.gitignore
 .idea/compiler.xml
@@ -29,11 +28,7 @@ gradle-app.setting
 .idea/saveactions_settings.xml
 .idea/uiDesigner.xml
 .idea/vcs.xml
-build.gradle
 build/
-gradle.properties
 gradle/
-gradlew
-gradlew.bat
 lombok.config
 settings.gradle
