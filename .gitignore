@@ -1,34 +1,32 @@
-# Created by .ignore support plugin (hsz.mobi)
+## Java
+
 *.class
-*.log
-*.ctxt
-.mtj.tmp/
-*.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 hs_err_pid*
-.idea
+
+
+## Android Studio and Intellij and Android in general
+/android/libs/armeabi/
+/android/libs/armeabi-v7a/
+/android/libs/arm64-v8a/
+/android/libs/x86/
+/android/libs/x86_64/
+/android/gen/
+.idea/
+*.ipr
+*.iws
 *.iml
-out
-gen
-.gradle
-/build/
-gradle-app.setting
-!gradle-wrapper.jar
-.gradletasknamecache
+/android/out/
+com_crashlytics_export_strings.xml
+
+## Gradle
+
+/local.properties
 .gradle/
-.idea/.gitignore
-.idea/compiler.xml
-.idea/gradle.xml
-.idea/misc.xml
-.idea/saveactions_settings.xml
-.idea/uiDesigner.xml
-.idea/vcs.xml
-build/
-gradle/
-lombok.config
-settings.gradle
+gradle-app.setting
+/build/
+
+## OS Specific
+.DS_Store
+Thumbs.db

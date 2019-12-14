@@ -19,7 +19,7 @@ public class GraphicsView extends JComponent {
         setGrid(grid);
         window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setBounds(0, 0, WINDOW_SIZE_X, WINDOW_SIZE_Y);
+        window.setBounds(0, 0, WINDOW_SIZE_X + WINDOW_UI_PANEL_SIZE_X, WINDOW_SIZE_Y);
         window.getContentPane().add(this);
         window.setVisible(true);
         window.setLocationRelativeTo(null);

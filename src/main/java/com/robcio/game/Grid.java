@@ -6,6 +6,7 @@ import java.util.Random;
 
 import static com.robcio.util.Constants.*;
 
+//TODO another state for space with only user-created entities that will not destabilize or sth
 public class Grid {
 
     private final NeighbourMatrix neighbourMatrix = new NeighbourMatrix();
@@ -18,10 +19,10 @@ public class Grid {
 
     private int periodic(final int value, final int max) {
         if (PERIODIC_BOUNDARIES) {
-            if (value == -1) {
-                return max - 1;
-            } else if (value == max) {
-                return 0;
+            if (value < 0) {
+                return max + value;
+            } else if (value >= max) {
+                return value - max;
             }
         }
         return value;
@@ -29,9 +30,9 @@ public class Grid {
 
     void animate(final int x, final int y) {
         try {
-            grid[x][y] = true;
+            grid[periodic(x, GRID_SIZE_X)][periodic(y, GRID_SIZE_Y)] = true;
         } catch (final ArrayIndexOutOfBoundsException e) {
-            System.out.println("Out of bounds");
+            System.out.println(String.format("Out of bounds, [%d,%d]", x, y));
         }
     }
 
