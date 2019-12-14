@@ -6,23 +6,16 @@ import lombok.Setter;
 import javax.swing.*;
 import java.awt.*;
 
-import static com.robcio.util.Constants.*;
+import static com.robcio.util.Constants.BLOCK_SIZE_X;
+import static com.robcio.util.Constants.BLOCK_SIZE_Y;
 
-public class GraphicsView extends JComponent {
-
-    private final JFrame window;
+public class GridView extends JComponent {
 
     @Setter
     private Grid grid;
 
-    public GraphicsView (final Grid grid) {
+    public GridView(final Grid grid) {
         setGrid(grid);
-        window = new JFrame();
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setBounds(0, 0, WINDOW_SIZE_X + WINDOW_UI_PANEL_SIZE_X, WINDOW_SIZE_Y);
-        window.getContentPane().add(this);
-        window.setVisible(true);
-        window.setLocationRelativeTo(null);
     }
 
     @Override
