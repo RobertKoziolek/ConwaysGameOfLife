@@ -8,16 +8,16 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         final GameController gameController = new GameController();
-        Thread stepThread = gameController.getStepThread();
+
         final GridView gridView = new GridView(gameController.getGrid());
         final Window window = new Window(gridView);
-        gameController.addListeners(window);
+
+        gameController.addListeners(gridView);
         while (true) {
-            stepThread.join();
+            gameController.joinStep();
             gridView.setGrid(gameController.getGrid());
             window.repaint();
-            stepThread = gameController.getStepThread();
-            stepThread.start();
+            gameController.startStep();
             Thread.sleep(gameController.getStepTime());
         }
     }

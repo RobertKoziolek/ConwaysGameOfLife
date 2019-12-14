@@ -19,19 +19,25 @@ public class GameController {
     final StepTime stepTime = new StepTime();
     final Brush brush = new GospersGunBrush();
 
+    {
+        startStep();
+    }
 
-    public Thread getStepThread() {
+    public void joinStep() throws InterruptedException {
+        stepThread.join();
+    }
+    public void startStep() {
         stepThread = new Thread(() -> {
             grid = grid.step();
         });
-        return stepThread;
+        stepThread.start();
     }
 
     public long getStepTime() {
         return stepTime.getStepTime();
     }
 
-    public void addListeners(final JFrame component) {
+    public void addListeners(final JComponent component) {
         component.addMouseWheelListener(new MouseAdapter() {
             @Override
             public void mouseWheelMoved(MouseWheelEvent e) {
